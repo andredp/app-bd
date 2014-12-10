@@ -8,23 +8,15 @@
 
 class Session {
 
-    /*
-    private static $instance;
-
-    public static function getInstance()
-    {
-        if (!isset(self::$instance)) {
-            self::$instance = new self;
-        }
-        return self::$instance;
+    public static function login($username, $name) {
+        Session::set("username", $username);
+        Session::set("name", $name);
     }
 
-    protected function __construct() {
+    public static function isLoggedIn() {
+        return Session::get("username") != null;
     }
 
-    protected function __clone() {
-    }
-    */
     public static function set($name, $value) {
         session_start();
         $_SESSION[$name] = $value;

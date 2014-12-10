@@ -20,11 +20,15 @@ require_once(__DIR__ . '/controllers/AuctionListController.php');
 
 // routes
 $routes = array(
-    'auction-list' => array('model' => 'TableRecordModel', 'view' => 'AuctionList', 'controller' => 'AuctionController'),
+    'auction-list' => ['model' => 'TableRecordModel', 'view' => 'AuctionList', 'controller' => 'AuctionController'],
 );
 
+
+
+
+
 // mvc solver
-$route = isset($_GET["r"]) ? $_GET["r"] : null;
+$route  = isset($_GET["r"]) ? $_GET["r"] : null;
 $action = isset($_GET["a"]) ? $_GET["a"] : null;
 
 switch($route) {
@@ -55,19 +59,11 @@ switch($route) {
 }
 
 
-
-
-
-
 //echo "current route: " . $route;
 
 //echo "model: " . $routes['auctions']['model'];
 
 //include_once(__DIR__ . $routes['auctions']['model'] . '.php');
 
-echo "rodapé2";
-
-
-
-include_once('footer.php');
+require_once('footer.php');
 

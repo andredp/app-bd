@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php include_once('head.php'); ?>
+<?php require_once('head.php'); ?>
 
 <header class="navbar navbar-default navbar-static-top">
     <div class="container">

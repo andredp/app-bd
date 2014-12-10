@@ -6,14 +6,11 @@
  * Time: 15:15
  */
 
-class AuctionList {
+require_once(__DIR__ . '/View.php');
 
-    private $model;
-    private $controller;
-
+class AuctionList extends View {
     public function __construct($model, $controller) {
-        $this->model = $model;
-        $this->controller = $controller;
+        parent::__construct($model, $controller);
     }
 
     public function render() {
@@ -26,9 +23,10 @@ class AuctionList {
         echo("<table>");
         echo("<tr><td>ID</td><td>nif</td><td>diahora</td><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
         $idleilao = 0;
+    //    $leilao = [];
 
-        foreach($this->model->getTableRecord() as $row){
-            $idleilao = $idleilao +1;
+        foreach ($this->model->getTableRecord() as $row) {
+            $idleilao += 1;
             echo("<tr><td>");
             echo($idleilao); echo("</td><td>");
             echo($row["nif"]); echo("</td><td>");
@@ -37,7 +35,8 @@ class AuctionList {
             echo utf8_encode($row["nome"]); echo("</td><td>");
             echo($row["tipo"]); echo("</td><td>");
             echo($row["valorbase"]); echo("</td><td>");
-            $leilao[$idleilao]= array($row["nif"],$row["dia"],$row["nrleilaonodia"]);
+
+        //    $leilao[$idleilao] = [$row["nif"], $row["dia"], $row["nrleilaonodia"]];
         }
         echo("</table>\n");
 
