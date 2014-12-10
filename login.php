@@ -20,7 +20,7 @@
 
 // Função para limpar os dados de entrada
 
-include('./include/config.inc.php');
+include(__DIR__ . '/includes/config.inc.php');
 
 function test_input($data) {
     $data = trim($data);
@@ -67,6 +67,6 @@ if ($safepin != $pin ) {
 }
 
 header('Content-Type: aplication/json');
-echo json_encode(array('test' => true));
+echo json_encode(['test' => true]);
 
 //echo "<p>Pin Valido! </p>\n";

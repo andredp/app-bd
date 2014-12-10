@@ -2,8 +2,10 @@ $(document).ready(function(){
     $("#submit").click(function(){
         var username = $("#username").val();
         var pin = $("#pin").val();
-        var data = 'username=' + username +
-                   'pin=' + pin;
+        var data = {
+            'username' : username,
+            'pin' : pin
+        };
 
         $.ajax({
             type: "POST",
