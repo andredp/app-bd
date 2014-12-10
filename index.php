@@ -67,5 +67,7 @@ switch($route) {
 
 echo "rodapé2";
 
+
+
 include_once('footer.php');
 
