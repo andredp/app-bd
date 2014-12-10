@@ -65,7 +65,7 @@ switch($route) {
 
 //include_once(__DIR__ . $routes['auctions']['model'] . '.php');
 
-echo "rodapé";
+echo "rodapé2";
 
 include_once('footer.php');
 
