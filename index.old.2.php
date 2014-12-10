@@ -49,7 +49,7 @@
 
                 <div class="col-lg-3"><input type="password" id="pin" class="form-control" name="pin"></div>
 
-                <div class="col-lg-8"><p class="help-block help-block-error"></p></div>
+                <div class="col-lg-8"><p class="help-block help-block-error">error</p></div>
             </div>
 
             <div class="form-group">

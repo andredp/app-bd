@@ -34,7 +34,7 @@ class AuctionList {
             echo($row["nif"]); echo("</td><td>");
             echo($row["dia"]); echo("</td><td>");
             echo($row["nrleilaonodia"]); echo("</td><td>");
-            echo($row["nome"]); echo("</td><td>");
+            echo utf8_encode($row["nome"]); echo("</td><td>");
             echo($row["tipo"]); echo("</td><td>");
             echo($row["valorbase"]); echo("</td><td>");
             $leilao[$idleilao]= array($row["nif"],$row["dia"],$row["nrleilaonodia"]);
