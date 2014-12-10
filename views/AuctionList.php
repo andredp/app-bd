@@ -24,7 +24,7 @@ class AuctionList {
         echo '<div class="container">';
 
         echo("<table>");
-        echo("<tr><td>ID</td><td>nif</td><!--<td>diahora</td>--><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
+        echo("<tr><td>ID</td><td>nif</td><td>diahora</td><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
         $idleilao = 0;
 
         foreach($this->model->getTableRecord() as $row){
@@ -32,12 +32,12 @@ class AuctionList {
             echo("<tr><td>");
             echo($idleilao); echo("</td><td>");
             echo($row["nif"]); echo("</td><td>");
-            //echo($row["diahora"]); echo("</td><td>");
+            echo($row["dia"]); echo("</td><td>");
             echo($row["nrleilaonodia"]); echo("</td><td>");
             echo($row["nome"]); echo("</td><td>");
             echo($row["tipo"]); echo("</td><td>");
             echo($row["valorbase"]); echo("</td><td>");
-            //$leilao[$idleilao]= array($row["nif"],$row["diahora"],$row["nrleilaonodia"]);
+            $leilao[$idleilao]= array($row["nif"],$row["dia"],$row["nrleilaonodia"]);
         }
         echo("</table>\n");
 
