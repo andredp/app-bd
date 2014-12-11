@@ -8,6 +8,8 @@
 
 namespace controllers;
 
+use utils\Session;
+
 class AuctionController extends Controller {
 
     public function __construct($model, $view) {
@@ -21,28 +23,22 @@ class AuctionController extends Controller {
         $this->view->render();
     }
 
-    public function actionAjaxSubscribe($nif = 63063, $pin = 63063) {
+    public function actionAjaxSubscribe() {
 
-        $this->model->execute("SELECT * FROM pessoa WHERE nif=$nif");
+        $nif = Session::get('username');
+        $lid = $_POST["lid"];
 
-        if ($this->model->getRecordCount() == 0) {
-            header('Content-Type: application/json');
-            echo json_encode(['status' => '0', 'message' => 'unknown user']);
-            return;
-        }
-        else {
-            if($this->model->getRecord() != null) {
-            }
 
-                $this->model->execute("INSERT INTO concorrente(pessoa, leilao) VALUES (63063, 2)");
+        $this->model->execute("INSERT INTO concorrente(pessoa, leilao) VALUES ($nif, $lid)");
+                /*
                 header('Content-Type: application/json');
                 echo json_encode([
                     'status' => 3,
                     'message' => explode('?', "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'])[0],
                     'message2' => "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']
                 ]);
+                */
 
-            }
         }
 
 

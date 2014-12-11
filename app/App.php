@@ -48,9 +48,10 @@ class App {
         self::routeSolver();
 
         $action = isset($_GET["a"]) ? $_GET["a"] : null;
-        $params = isset($_GET["p"]) ? $_GET["p"] : null;
 
         if($action != null) {
+
+            //$test = "action: " . $action . " params: " . $params;
             if(method_exists($this->controller, $action)) {
                 $this->controller->{$action}();                             // SEND PARAMS TOOOOOOOOOO
             }

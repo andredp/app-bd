@@ -22,7 +22,11 @@ class LoginController extends Controller {
         $this->view->render();
     }
 
-    public function actionAjaxSubmit($nif = 63063, $pin = 63063) {
+    public function actionAjaxSubmit() {
+
+
+        $nif=$_POST["username"];
+        $pin=$_POST["pin"];
 
         $this->model->execute("SELECT * FROM pessoa WHERE nif=$nif");
 
@@ -46,9 +50,7 @@ class LoginController extends Controller {
                         return;
                     }
                 }
-                $url = 1;//$_SERVER('REQUEST_URI');
-                //\http_redirect("http:8888/localhost/app-bd", array("name" => "value"), true, HTTP_REDIRECT_PERM);
-
+                Session::set('username', $nif);
                 header('Content-Type: application/json');
                 echo json_encode([
                     'status' => 3,

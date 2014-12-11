@@ -42,7 +42,7 @@ include_once(__DIR__ . "/../navigation.php");
                     <div class="form-group field-loginform-username required">
                         <label class="col-lg-1 control-label" for="username">ID do leilão</label>
 
-                        <div class="col-lg-3"><input type="text" id="username" class="form-control" name="username"></div>
+                        <div class="col-lg-3"><input type="text" id="lid" class="form-control" name="username"></div>
 
                         <div class="col-lg-8"><p class="help-block help-block-error"></p></div>
                     </div>

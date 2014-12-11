@@ -1,5 +1,7 @@
-$(document).ready(function(){
-    $("#submit").click(function(){
+
+$(document).ready(function() {
+    $("#login").click(function() {
+
         var username = $("#username").val();
         var pin = $("#pin").val();
         var data = {
@@ -14,7 +16,7 @@ $(document).ready(function(){
             cache: false,
             success: function(result){
                console.log(result);
-               window.location.href = "./index.php";
+               window.location.href = "./index.new.php?r=Auction";
 
             }
         });

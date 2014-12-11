@@ -1,10 +1,10 @@
 $(document).ready(function(){
     $("#subscribe").click(function(){
-        var username = $("#username").val();
-        var pin = $("#pin").val();
+        var lid = $("#lid").val();
+        console.log(lid);
+
         var data = {
-            'username' : username,
-            'pin' : pin
+            'lid' : lid
         };
 
         $.ajax({
@@ -13,7 +13,9 @@ $(document).ready(function(){
             data: data,
             cache: false,
             success: function(result){
-               console.log(result);
+
+                console.log("end");
+                console.log(result);
                //window.location.href = "./index.php";
 
             }

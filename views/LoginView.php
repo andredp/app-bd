@@ -52,7 +52,7 @@ class LoginView extends View {
 
                     <div class="form-group">
                         <div class="col-lg-offset-1 col-lg-11">
-                            <button type="submit" class="btn btn-primary" id="submit" name="login-button">Login</button>
+                            <button type="submit" class="btn btn-primary" id="login" name="login-button">Login</button>
                         </div>
                     </div>
 
