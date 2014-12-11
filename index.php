@@ -7,7 +7,7 @@ require_once('navigation.php');
 require_once(__DIR__ . '/views/AuctionList.php');
 
 // models
-require_once(__DIR__ . '/models/TableRecordModel.php');
+require_once(__DIR__ . '/models/AuctionModel.php');
 
 // controllers
 require_once(__DIR__ . '/controllers/AuctionListController.php');
@@ -18,7 +18,7 @@ require_once(__DIR__ . '/includes/config.inc.php');
 // routes
 $routes = [
     'auction-list' => [
-        'model'      => 'TableRecordModel',
+        'model'      => 'AuctionModel',
         'view'       => 'AuctionList',
         'controller' => 'AuctionListController'],
     'login' => [
@@ -34,7 +34,7 @@ $db = new DataBase(HOST, DATABASE, USER, PASSWORD);
 $route  = isset($_GET["r"]) ? $_GET["r"] : null;
 $action = isset($_GET["a"]) ? $_GET["a"] : null;
 
-$model      = new $routes[$route]['model']($db, "SELECT * FROM leilao");
+$model      = new $routes[$route]['model']($db);
 $controller = new $routes[$route]['controller']($model);
 $view       = new $routes[$route]['view']($model, $controller);
 $view->render();

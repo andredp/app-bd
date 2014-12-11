@@ -13,7 +13,7 @@ class TableRecordModel {
     private $record;
     private $db;
 
-    public function __construct($db, $sql) {
+    protected function __construct($db, $sql) {
         $this->sql = $sql;
         $this->db  = $db;
     }
