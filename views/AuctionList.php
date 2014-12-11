@@ -15,7 +15,6 @@ class AuctionList extends View {
 
     public function render() {
 
-        $this->model->setQuery('SELECT * FROM leilao');
         $this->model->execute();
 
         echo '<div class="container">';

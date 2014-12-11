@@ -32,7 +32,7 @@ class DataBase {
     }
 
     public function query($sql) {
-        if ($this->connection != null) {
+        if ($this->connection == null) {
             $this->init();
         }
         return $this->connection->query($sql);
