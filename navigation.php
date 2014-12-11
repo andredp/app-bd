@@ -16,16 +16,14 @@
 
     </div>
 
-    <header class="navbar-default">
-        <div class="container">
-
-            <div class="navbar-header">
-                <a href="#" class="navbar-brand">
-
-                </a>
-            </div>
-
-        </div>
-    </header>
-
+<?php
+    echo("<header class='navbar-default'>");
+        echo("<div class='container'>");
+            echo("<ul class='nav navbar-nav'>");
+                echo("<li class='active'><a href=''>Leilões</a></li>");
+                echo("<li><a href=''>Portefólio</a></li>");
+            echo("</ul>");
+        echo("</div>");
+    echo("</header>");
+?>
 </div>

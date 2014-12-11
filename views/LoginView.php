@@ -17,7 +17,7 @@ class LoginView extends View {
     public function render() {
 
         include_once(__DIR__ . "/../head.php");
-        include_once(__DIR__ . "/../navigation.php");
+        //include_once(__DIR__ . "/../navigation.php");
         ?>
         <div class="container">
             <!--

@@ -66,12 +66,10 @@ include_once(__DIR__ . "/../navigation.php");
 
         echo("<table>");
         echo("<tr><td>ID</td><td>NIF</td><td>diahora</td><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
-        $idleilao = 0;
 
         foreach ($this->model->getRecord() as $row) {
-            $idleilao += 1;
             echo("<tr><td>");
-            echo($idleilao); echo("</td><td>");
+            echo($row['lid']); echo("</td><td>");
             echo($row["nif"]); echo("</td><td>");
             echo($row["dia"]); echo("</td><td>");
             echo($row["nrleilaonodia"]); echo("</td><td>");

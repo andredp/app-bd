@@ -19,7 +19,7 @@ class AuctionController extends Controller {
 
     public function actionDefault() {
         // no model logic
-        $this->model->execute("SELECT * FROM leilao");
+        $this->model->execute("SELECT * FROM leilao NATURAL JOIN leilaor");
         $this->view->render();
     }
 

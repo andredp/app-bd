@@ -24,7 +24,11 @@ class App {
     private function routeSolver() {
         $route  = isset($_GET["r"]) ? $_GET["r"] : null;
 
-        if($route == null )
+        \utils\Session::destroy();
+        echo \utils\Session::get("username");
+
+
+        if ($route == null || !\utils\Session::isLoggedIn())
             $route = $this->routes['default'];
 
         $class['m'] = "\\models\\" . $route. "Model";
