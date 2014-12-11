@@ -20,15 +20,39 @@ class LoginController extends Controller {
         $this->view->render();
     }
 
-    public function actionAjaxSubmit($nif, $pin) {
-        $this->model->setQuery("SELECT * FROM pessoa");
+    public function actionAjaxSubmit($nif = 64323725, $pin = 64725) {
+        $this->model->setQuery("SELECT * FROM pessoa WHERE nif=$nif");
         $this->model->execute();
-        //return json_encode();
 
-        //header();
+        if (!$this->model->getTableRecord()) {
+            echo("Error1!");
+        }
 
+        if ($this->model->getTableRecord()->rowCount() == 0) {
+            echo("Error2!");
+            return json_encode([
+                status  => "error",
+                message => "Unknown Username"
+            ]);
+        }
 
-        echo "actionAjaxSubmit";
+        foreach ($this->model->getTableRecord() as $row) {
+            $userpin = $row['pin'];
+            $usernif = $row['nif'];
+            if ($userpin != $pin) {
+                echo("Error!");
+                return json_encode([
+                    status => "error",
+                    message => "Wrong Password"
+                ]);
+            }
+        }
+
+        // On success
+        echo("Success: ");
+        echo("PIN: " . $userpin);
+        echo("NIF: " . $usernif);
+        //header("");
     }
 
 } 

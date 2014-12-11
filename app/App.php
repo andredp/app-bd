@@ -19,8 +19,6 @@ class App {
 
     public function __construct($db) {
         $this->db = $db;
-        echo __CLASS__;
-        echo __DIR__;
     }
 
     private function routeSolver() {
@@ -52,7 +50,6 @@ class App {
         $action = isset($_GET["a"]) ? $_GET["a"] : null;
         $params = isset($_GET["p"]) ? $_GET["p"] : null;
 
-        echo "action:   " . $action;
         if($action != null) {
             if(method_exists($this->controller, $action)) {
                 $this->controller->{$action}();                             // SEND PARAMS TOOOOOOOOOO

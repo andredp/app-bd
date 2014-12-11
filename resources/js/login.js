@@ -9,7 +9,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "index.new.php?r=login&a=actionAjaxSubmit()",
+            url: "index.new.php?r=login&a=actionAjaxSubmit",
             data: data,
             cache: false,
             success: function(result){

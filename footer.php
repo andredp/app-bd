@@ -7,9 +7,14 @@
  */
 ?>
 
+
+
         <script src="./vendor/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="./vendor/bower_components/modernizr/modernizr.js"></script>
         <script src="./vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="./resources/js/login.js"></script>
+
 
     </body>
 </html>
