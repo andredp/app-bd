@@ -11,13 +11,12 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "index.new.php?r=login&a=actionAjaxSubmit",
+            url: "index.php?r=login&a=actionAjaxSubmit",
             data: data,
             cache: false,
             success: function(result){
                console.log(result);
-               window.location.href = "./index.new.php?r=Auction";
-
+               window.location.href = "./index.php?r=Auction";
             }
         });
 
