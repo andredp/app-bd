@@ -9,15 +9,11 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "index.new.php?r=Auction&a=actionAjaxSubscribe",
+            url: "index.php?r=Auction&a=actionAjaxSubscribe",
             data: data,
             cache: false,
             success: function(result){
-
-                console.log("end");
                 console.log(result);
-               //window.location.href = "./index.php";
-
             }
         });
 

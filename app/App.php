@@ -31,8 +31,8 @@ class App {
         $class['v'] = "\\views\\" . $route. "View";
         $class['c'] = "\\controllers\\" . $route. "Controller";
 
-        foreach($class as $c) {
-            if(!class_exists($c)) {
+        foreach ($class as $c) {
+            if (!class_exists($c)) {
                 echo "ERROR INVALID ROUTE";
                 exit(0);                                                    // NEEDS TO BE LOGGED(LOG)!!!!!
             }

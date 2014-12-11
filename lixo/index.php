@@ -1,14 +1,6 @@
 <?php
 
-include_once(__DIR__ . '/includes/config.inc.php');
 
-spl_autoload_extensions(".php");
-spl_autoload_register();
-
-$app = new app\App(new \utils\DataBase(HOST, DATABASE, USER, PASSWORD));
-$app->run();
-
-/*
 require_once('head.php');
 require_once('navigation.php');
 
@@ -28,7 +20,8 @@ require_once(__DIR__ . '/class/DataBase.php');
 require_once(__DIR__ . '/class/Session.php');
 require_once(__DIR__ . '/includes/config.inc.php');
 
-
+spl_autoload_extensions(".php"); // comma-separated list
+spl_autoload_register();
 
 // routes
 $routes = [
@@ -74,4 +67,3 @@ $view->render();
 
 require_once('footer.php');
 
-*/
