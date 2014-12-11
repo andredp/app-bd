@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: andredp
- * Date: 10/12/14
- * Time: 22:19
- */
 
 abstract class View {
 
@@ -15,6 +9,8 @@ abstract class View {
         $this->model = $model;
         $this->controller = $controller;
     }
+
+    protected abstract function prepare();
 
     protected abstract function render();
 } 

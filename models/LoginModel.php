@@ -2,9 +2,9 @@
 
 require_once(__DIR__ . "/TableRecordModel.php");
 
-class AuctionModel extends TableRecordModel {
+class LoginModel extends TableRecordModel {
 
-    const SQL = 'SELECT * FROM leilao';
+    const SQL = 'SELECT * FROM pessoa';
 
     public function __construct($db) {
         parent::__construct($db, self::SQL);

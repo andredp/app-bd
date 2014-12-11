@@ -8,21 +8,21 @@
 
 require_once(__DIR__ . '/View.php');
 
-class AuctionList extends View {
+class AuctionListView extends View {
     public function __construct($model, $controller) {
         parent::__construct($model, $controller);
     }
 
-    public function render() {
-
+    public function prepare() {
         $this->model->execute();
+    }
 
+    public function render() {
         echo '<div class="container">';
 
         echo("<table>");
-        echo("<tr><td>ID</td><td>nif</td><td>diahora</td><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
+        echo("<tr><td>ID</td><td>NIF</td><td>diahora</td><td>NrDoDia</td><td>nome</td><td>tipo</td><td>valorbase</td></tr>\n");
         $idleilao = 0;
-    //    $leilao = [];
 
         foreach ($this->model->getTableRecord() as $row) {
             $idleilao += 1;
@@ -35,7 +35,6 @@ class AuctionList extends View {
             echo($row["tipo"]); echo("</td><td>");
             echo($row["valorbase"]); echo("</td><td>");
 
-        //    $leilao[$idleilao] = [$row["nif"], $row["dia"], $row["nrleilaonodia"]];
         }
         echo("</table>\n");
 
