@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 10/12/14
- * Time: 11:14
- */
 
+namespace models;
 
 class TableRecordModel {
 
@@ -13,9 +8,12 @@ class TableRecordModel {
     private $record;
     private $db;
 
-    protected function __construct($db, $sql) {
-        $this->sql = $sql;
+    protected function __construct($db) {
         $this->db  = $db;
+    }
+
+    public function setQuery($sql) {
+        $this->sql = $sql;
     }
 
     public function execute() {

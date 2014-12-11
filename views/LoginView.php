@@ -1,11 +1,13 @@
 <?php
 
-require_once(__DIR__ . '/View.php');
+//require_once(__DIR__ . '/View.php');
+
+namespace views;
 
 class LoginView extends View {
 
-    public function __construct($model, $controller) {
-        parent::__construct($model, $controller);
+    public function __construct($model) {
+        parent::__construct($model);
     }
 
     public function prepare() {

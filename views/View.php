@@ -1,13 +1,13 @@
 <?php
 
+namespace views;
+
 abstract class View {
 
     protected $model;
-    protected $controller;
 
-    protected function __construct($model, $controller) {
+    protected function __construct($model) {
         $this->model = $model;
-        $this->controller = $controller;
     }
 
     protected abstract function prepare();

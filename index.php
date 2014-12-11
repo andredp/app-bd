@@ -1,5 +1,6 @@
 <?php
 
+
 require_once('head.php');
 require_once('navigation.php');
 
@@ -19,20 +20,25 @@ require_once(__DIR__ . '/class/DataBase.php');
 require_once(__DIR__ . '/class/Session.php');
 require_once(__DIR__ . '/includes/config.inc.php');
 
+spl_autoload_extensions(".php"); // comma-separated list
+spl_autoload_register();
+
 // routes
 $routes = [
-    'auction-list' => [
+    'appbd-list' => [
         'model'      => 'AuctionListModel',
         'view'       => 'AuctionListView',
         'controller' => 'AuctionListController'],
     'login' => [
         'model'      => 'LoginModel',
         'view'       => 'LoginView',
-        'controller' => 'LoginController'
+        'controller' => 'Appbd\controllers\LoginController'
     ]
 ];
 
 $db = new DataBase(HOST, DATABASE, USER, PASSWORD);
+
+$test = new Appbd\Controllers\LoginController();//ontrollers\LoginController();
 
 if (!Session::isLoggedIn()) {
     $route  = 'login';
