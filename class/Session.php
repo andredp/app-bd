@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 09/12/14
- * Time: 19:53
- */
 
 class Session {
 
