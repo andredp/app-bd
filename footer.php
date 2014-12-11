@@ -14,6 +14,7 @@
         <script src="./vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <script src="./resources/js/login.js"></script>
+        <script src="./resources/js/subscribe.js"></script>
 
 
     </body>

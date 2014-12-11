@@ -2,9 +2,9 @@
 
 namespace models;
 
-class LoginModel extends RecordModel {
+class AuctionModel extends RecordModel {
 
-    //const SQL = 'SELECT * FROM pessoa';
+    //const SQL = 'SELECT * FROM leilao';
 
     public function __construct($db) {
         parent::__construct($db);

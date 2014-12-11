@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#submit").click(function(){
+    $("#subscribe").click(function(){
         var username = $("#username").val();
         var pin = $("#pin").val();
         var data = {
@@ -9,12 +9,12 @@ $(document).ready(function(){
 
         $.ajax({
             type: "POST",
-            url: "index.new.php?r=login&a=actionAjaxSubmit",
+            url: "index.new.php?r=Auction&a=actionAjaxSubscribe",
             data: data,
             cache: false,
             success: function(result){
                console.log(result);
-               window.location.href = "./index.php";
+               //window.location.href = "./index.php";
 
             }
         });

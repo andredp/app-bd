@@ -13,7 +13,7 @@ require_once('head.php');
 require_once('navigation.php');
 
 // views
-require_once(__DIR__ . '/views/AuctionListView.php');
+require_once(__DIR__ . '/views/AuctionView.php');
 require_once(__DIR__ . '/views/LoginView.php');
 
 // models

@@ -8,6 +8,8 @@
 
 namespace controllers;
 
+use utils\Session;
+
 class LoginController extends Controller {
 
     public function __construct($model, $view) {
@@ -20,10 +22,43 @@ class LoginController extends Controller {
         $this->view->render();
     }
 
-    public function actionAjaxSubmit($nif = 64323725, $pin = 64725) {
-        $this->model->setQuery("SELECT * FROM pessoa WHERE nif=$nif");
-        $this->model->execute();
+    public function actionAjaxSubmit($nif = 63063, $pin = 63063) {
 
+        $this->model->execute("SELECT * FROM pessoa WHERE nif=$nif");
+
+        if ($this->model->getRecordCount() == 0) {
+            header('Content-Type: application/json');
+            echo json_encode(['status' => '0', 'message' => 'unknown user']);
+            return;
+        }
+        else {
+            if($this->model->getRecord() != null) {
+                foreach ($this->model->getRecord() as $row) {
+                    $userpin = $row['pin'];
+                    $usernif = $row['nif'];
+                    if ($userpin != $pin) {
+
+                        header('Content-Type: application/json');
+                        echo json_encode([
+                            'status' => 1,
+                            'message' => "wrong password"
+                        ]);
+                        return;
+                    }
+                }
+                $url = 1;//$_SERVER('REQUEST_URI');
+                //\http_redirect("http:8888/localhost/app-bd", array("name" => "value"), true, HTTP_REDIRECT_PERM);
+
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'status' => 3,
+                    'message' => explode('?', "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'])[0],
+                    'message2' => "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']
+                ]);
+
+            }
+        }
+/*
         if (!$this->model->getTableRecord()) {
             echo("Error1!");
         }
@@ -47,12 +82,8 @@ class LoginController extends Controller {
                 ]);
             }
         }
+*/
 
-        // On success
-        echo("Success: ");
-        echo("PIN: " . $userpin);
-        echo("NIF: " . $usernif);
-        //header("");
     }
 
 } 
