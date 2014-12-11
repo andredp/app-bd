@@ -24,7 +24,7 @@ class App {
     private function routeSolver() {
         $route  = isset($_GET["r"]) ? $_GET["r"] : null;
 
-        if($route == null)
+        if($route == null )
             $route = $this->routes['default'];
 
         $class['m'] = "\\models\\" . $route. "Model";
