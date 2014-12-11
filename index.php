@@ -18,13 +18,15 @@ require_once(__DIR__ . '/models/TableRecordModel.php');
 // controllers
 require_once(__DIR__ . '/controllers/AuctionListController.php');
 
+require_once(__DIR__ . '/class/DataBase.php');
+require_once(__DIR__ . '/includes/config.inc.php');
+
 // routes
-$routes = array(
+$routes = [
     'auction-list' => ['model' => 'TableRecordModel', 'view' => 'AuctionList', 'controller' => 'AuctionController'],
-);
+];
 
-
-
+$db = new DataBase(HOST, DATABASE, USER, PASSWORD);
 
 
 // mvc solver
@@ -35,7 +37,7 @@ switch($route) {
 
     case 'auction-list':
         echo "route action-list";
-        $model = new TableRecordModel();
+        $model = new TableRecordModel($db, "SELECT * FROM leilao");
         $controller = new AuctionListController($model);
         $view = new AuctionList($model, $controller);
 

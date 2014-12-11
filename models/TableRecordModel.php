@@ -6,25 +6,20 @@
  * Time: 11:14
  */
 
-require_once(__DIR__ . '/../includes/config.inc.php');
 
 class TableRecordModel {
 
-    private $query;
+    private $sql;
     private $record;
-    private $connection;
+    private $db;
 
-    public function __construct() {
-        //echo __CLASS__;
-    }
-
-    public function setQuery($sql) {
-        $this->query = $sql;
+    public function __construct($db, $sql) {
+        $this->sql = $sql;
+        $this->db  = $db;
     }
 
     public function execute() {
-        $this->connection = new PDO("mysql:host=" . HOST . ";dbname=" . DATABASE, USER, PASSWORD, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
-        $this->record = $this->connection->query($this->query);
+        $this->record = $this->db->query($this->sql);
     }
 
     public function updateRecord() {
