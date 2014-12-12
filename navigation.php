@@ -23,6 +23,7 @@
         echo("<ul class='nav navbar-nav'>");
         echo("<li class='active'><a href='index.php?r=Auction'>Leilões</a></li>");
         echo("<li><a href='index.php?r=Bid'>Meus Leilões</a></li>");
+        echo("<li><a href='index.php?r=AuctionTransaction'>Leilões Transação</a></li>");
         echo("</ul>");
         echo("</div>");
         echo("</header>");

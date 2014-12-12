@@ -27,7 +27,7 @@ class DataBase {
     private function init() {
         try {
             $this->connection = new \PDO("mysql:host=$this->host;dbname=$this->database",
-                $this->user, $this->password, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]);
+                $this->user, $this->password, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]);
         } catch (\PDOException $e) {
             echo($e->getMessage());
         }

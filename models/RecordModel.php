@@ -15,12 +15,19 @@ class RecordModel {
         return $this->records = $this->db->query($sql);
     }
 
-    public function updateRecord() {
+    public function beginTransaction() {
+        return $this->db->beginTransaction();
+    }
 
+    public function exec($sql) {
+        return $this->records = $this->db->exec($sql);
+    }
+
+    public function commit() {
+        $this->db->commit();
     }
 
     public function getRecordCount() {
-
         if (!$this->records) {
             return 0;
         } else {

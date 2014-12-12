@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 11/12/14
- * Time: 10:50
- */
 
 namespace app;
 
@@ -31,6 +25,7 @@ class App {
         $class['m'] = "\\models\\" . $route. "Model";
         $class['v'] = "\\views\\" . $route. "View";
         $class['c'] = "\\controllers\\" . $route. "Controller";
+
 
         foreach ($class as $c) {
             if (!class_exists($c)) {
