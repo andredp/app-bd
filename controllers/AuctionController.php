@@ -14,12 +14,13 @@ class AuctionController extends Controller {
 
     public function __construct($model, $view) {
         parent::__construct($model, $view);
-        //echo "class: " . __CLASS__;
     }
 
     public function actionDefault() {
-        // no model logic
-        $this->model->execute("SELECT * FROM leilao NATURAL JOIN leilaor");
+        $this->model->execute(
+            "SELECT * FROM leilao " .
+            "NATURAL JOIN leilaor " .
+            "ORDER BY lid");
         $this->view->render();
     }
 

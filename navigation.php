@@ -17,13 +17,15 @@
     </div>
 
 <?php
-    echo("<header class='navbar-default'>");
+    if (\utils\Session::isLoggedIn()) {
+        echo("<header class='navbar-default'>");
         echo("<div class='container'>");
-            echo("<ul class='nav navbar-nav'>");
-                echo("<li class='active'><a href=''>Leilões</a></li>");
-                echo("<li><a href=''>Portefólio</a></li>");
-            echo("</ul>");
+        echo("<ul class='nav navbar-nav'>");
+        echo("<li class='active'><a href='index.php?r=Auction'>Leilões</a></li>");
+        echo("<li><a href='index.php?r=Bid'>Meus Leilões</a></li>");
+        echo("</ul>");
         echo("</div>");
-    echo("</header>");
+        echo("</header>");
+    }
 ?>
 </div>

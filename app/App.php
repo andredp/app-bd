@@ -24,12 +24,9 @@ class App {
     private function routeSolver() {
         $route  = isset($_GET["r"]) ? $_GET["r"] : null;
 
-        \utils\Session::destroy();
-        echo \utils\Session::get("username");
-
-
-        if ($route == null || !\utils\Session::isLoggedIn())
+        if ($route == null || !\utils\Session::isLoggedIn()) {
             $route = $this->routes['default'];
+        }
 
         $class['m'] = "\\models\\" . $route. "Model";
         $class['v'] = "\\views\\" . $route. "View";
@@ -55,7 +52,6 @@ class App {
 
         if($action != null) {
 
-            //$test = "action: " . $action . " params: " . $params;
             if(method_exists($this->controller, $action)) {
                 $this->controller->{$action}();                             // SEND PARAMS TOOOOOOOOOO
             }

@@ -11,7 +11,7 @@ class Session {
     }
 
     public static function isLoggedIn() {
-        return Session::get("username") != null;
+        return Session::get("username");
     }
 
     public static function set($name, $value) {
@@ -25,6 +25,7 @@ class Session {
     }
 
     public static function destroy() {
+        session_start();
         session_destroy();
         $_SESSION = [];
     }

@@ -12,7 +12,7 @@ class RecordModel {
     }
 
     public function execute($sql) {
-        $this->records = $this->db->query($sql);
+        return $this->records = $this->db->query($sql);
     }
 
     public function updateRecord() {

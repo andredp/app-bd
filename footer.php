@@ -15,6 +15,7 @@
 
         <script src="./resources/js/login.js"></script>
         <script src="./resources/js/subscribe.js"></script>
+        <script src="./resources/js/bid.js"></script>
 
 
     </body>
