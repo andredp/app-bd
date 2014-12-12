@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 10/12/14
- * Time: 11:12
- */
 
 namespace controllers;
 
@@ -44,15 +38,8 @@ class BidDetailController extends Controller {
         $valor = $_POST["valor"];
 
         $this->model->execute("INSERT INTO lance(pessoa, leilao, valor) VALUES ($nif, $lid, $valor);");
-                /*
-                header('Content-Type: application/json');
-                echo json_encode([
-                    'status' => 3,
-                    'message' => explode('?', "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'])[0],
-                    'message2' => "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']
-                ]);
-                */
-        }
+
+    }
 
 
 
