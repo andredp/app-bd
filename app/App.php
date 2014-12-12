@@ -4,15 +4,15 @@ namespace app;
 
 class App {
 
-    private $db;
+    private $pdo;
     private $model;
     private $view;
     private $controller;
 
     private $routes = ["default" => "Login"];
 
-    public function __construct($db) {
-        $this->db = $db;
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
     }
 
     private function routeSolver() {
@@ -34,7 +34,7 @@ class App {
             }
         }
 
-        $this->model = new $class['m']($this->db);
+        $this->model = new $class['m']($this->pdo);
         $this->view = new $class['v']($this->model);
         $this->controller = new $class['c']($this->model, $this->view);
     }

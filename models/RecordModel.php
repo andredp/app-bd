@@ -5,26 +5,26 @@ namespace models;
 class RecordModel {
 
     private $records = false;
-    private $db;
+    private $pdo;
 
-    protected function __construct($db) {
-        $this->db  = $db;
+    protected function __construct($pdo) {
+        $this->pdo  = $pdo;
     }
 
     public function execute($sql) {
-        return $this->records = $this->db->query($sql);
+        return $this->records = $this->pdo->query($sql);
     }
 
     public function beginTransaction() {
-        return $this->db->beginTransaction();
+        return $this->pdo->beginTransaction();
     }
 
     public function exec($sql) {
-        return $this->records = $this->db->exec($sql);
+        return $this->records = $this->pdo->exec($sql);
     }
 
     public function commit() {
-        $this->db->commit();
+        $this->pdo->commit();
     }
 
     public function getRecordCount() {

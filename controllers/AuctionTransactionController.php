@@ -23,12 +23,15 @@ class AuctionTransactionController extends Controller {
         $lids = $_POST["lids"];
         $nif = Session::get('username');
 
+        var_dump($lids);
+        echo("a");
         $this->model->beginTransaction();
-
+        echo("a");
         foreach($lids as $lid) {
+            echo("a");
             $this->model->exec("INSERT INTO concorrente(pessoa, leilao) VALUES ($nif, $lid)");
         }
-
+        echo("a");
         $this->model->commit();
 
        // $this->model->execute("INSERT INTO concorrente(pessoa, leilao) VALUES ($nif, $lid)");
