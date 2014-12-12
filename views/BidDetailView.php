@@ -19,9 +19,12 @@ class BidDetailView extends View {
         // Entrada do leilão com um certo id
         echo("<div class='container'>");
         echo("<table>");
-        echo("<tr><td>ID</td><td>NIF</td><td>Tempo Restante</td><td>nome</td><td>valorbase</td></tr>\n");
+        echo("<tr><td>ID</td><td>NIF</td><td>Tempo Restante(dias)</td><td>nome</td><td>valorbase</td></tr>\n");
 
         foreach ($this->model->getStoredRecord("bdetail") as $row) {
+
+            //var_dump($row);
+
             echo("<tr><td>");
             echo($row['lid']); echo("</td><td>");
             echo($row["nif"]); echo("</td><td>");

@@ -14,7 +14,7 @@ class BidDetailController extends Controller {
         $lid = $_GET["p"];
 
         $this->model->storeExecute("bdetail",
-            "SELECT * " .
+            "SELECT *, datediff(current_date(), date_add(dia, INTERVAL nrdias DAY)) as rem " .
             "FROM leilaor NATURAL JOIN leilao " .
             "WHERE lid = $lid;"
         );
